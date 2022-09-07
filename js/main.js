@@ -1,7 +1,19 @@
-// Script to open an close the desktop menu 
-const shoppingCart = document.getElementById('shoppingCart');
+// Script to open and close the desktop and mobile menu 
+const switchMenus = Array.from(document.getElementsByClassName('menu'));
 const desktopMenu = document.getElementById('desktopMenu');
+const mobileMenu = document.getElementById('mobileMenu');
 
-shoppingCart.addEventListener('click', (e) => {
-    desktopMenu.classList.toggle('hidden');
+switchMenus.forEach((menu) => {
+    menu.addEventListener('click', (e) => {
+        e.preventDefault();
+        desktopMenu.classList.toggle('hidden');
+        mobileMenu.classList.toggle('hidden');
+    });
+})
+
+// Script to correct reactions
+const emailMobileMenu = document.getElementById('emailMobileMenu');
+
+emailMobileMenu.addEventListener('click', (e) => {
+    e.preventDefault();
 })

@@ -8,8 +8,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/menu-desktop.css">
+    <link rel="stylesheet" href="./css/menu-mobile.css">
     <link rel="stylesheet" href="./css/styyles.css">
-
+    
     <title>Yard Sale</title>
 
     <script src="./js/main.js" defer type="module"></script>
@@ -17,7 +19,7 @@
 <body>
     <nav>
         <div class="left">
-            <figure class="bar">
+            <figure class="bar menu">
                 <img src="./assets/icons/icon_menu.svg" alt="Bar icon">
             </figure>
     
@@ -60,7 +62,7 @@
         </div>
 
         <div class="right">
-            <ul class="account">
+            <ul class="account menu">
                 <li>
                     <a href="/">yardsale@gmail.com</a>
                 </li>
@@ -81,15 +83,67 @@
     <div class="desktop-menu hidden" id="desktopMenu">
         <ul>
             <li>
-                <a href="" class="my-order">My orders</a>
+                <a href="./my-orders.html" class="my-order">My orders</a>
             </li>
 
             <li>
-                <a href="" class="my-account">My account</a>
+                <a href="./my-account.html" class="my-account">My account</a>
             </li>
 
             <li>
                 <a href="./login.html" class="sign-out">Sing out</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="menu-mobile hidden" id="mobileMenu">
+        <div class="exit menu">
+            <img src="./assets/icons/icon_close.png" alt="">
+        </div>
+
+        <p class="title">CATEGORIES</p>
+
+        <ul class="category-items">
+            <li>
+                <a href="/">All</a>
+            </li>
+            
+            <li>
+                <a href="/">Clothes</a>
+            </li>
+
+            <li>
+                <a href="/">Electronics</a>
+            </li>
+
+            <li>
+                <a href="/">Furnitures</a>
+            </li>
+
+            <li>
+                <a href="/">Toys</a>
+            </li>
+
+            <li>
+                <a href="/">Others</a>
+            </li>
+        </ul>
+
+        <ul class="category-account">
+            <li>
+                <a href="./my-orders.html">My orders</a>
+            </li>
+
+            <li>
+                <a href="./my-account.html">My account</a>
+            </li>
+
+            <li>
+                <a href="./my-account.html" class="email" id="emailMobileMenu">yardsale@gmail.com</a>
+            </li>
+
+            <li>
+                <a href="./login.html" class="sing-out">sign out</a>
             </li>
         </ul>
     </div>
