@@ -11,3 +11,9 @@ switchMenus.forEach((menu) => {
     });
 })
 
+// Script to correct reactions
+const emailMobileMenu = document.getElementById('emailMobileMenu');
+
+emailMobileMenu.addEventListener('click', (e) => {
+    e.preventDefault();
+})
