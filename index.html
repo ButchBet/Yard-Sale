@@ -4,38 +4,94 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
-    
-    <title>index</title>
+    <link rel="stylesheet" href="./css/styyles.css">
 
-    <style>
-        :root {
-            --very-light-pink: #C7C7C7;
-            --text-input-field: #F7F7F7;
-            --hospital-green: #ACD9B2;
-            --white: #FFFFFF;
-            --black: #000000;
-            --dark: #232830;
-            --sm: 14px;
-            --md: 16px;
-            --lg: 18px;
-        }
+    <title>Yard Sale</title>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Quicksand', sans-serif;
-        }
-    </style>
+    <script src="./js/main.js" defer type="module"></script>
 </head>
 <body>
+    <nav>
+        <div class="left">
+            <figure class="bar">
+                <img src="./assets/icons/icon_menu.svg" alt="Bar icon">
+            </figure>
     
+            <figure class="logo">
+                <img src="./assets/logos/logo_yard_sale.svg" alt="Yard Sale logo">
+            </figure>
+    
+            <ul class="categories">
+                <li>
+                    <a  class="selected" href="/">All</a>
+                </li>
+    
+                <li>
+                    <a class="" href="/">Clothes</a>
+                </li>
+    
+                <li>
+                    <a class="" href="/">Electronics</a>
+                </li>
+    
+                <li>
+                    <a class="" href="/">Furniture</a>
+                </li>
+    
+                <li>
+                    <a class="" href="/">Toys</a>
+                </li>
+    
+                <li>
+                    <a class="" href="/">Others</a>
+                </li>
+
+            </ul>
+            
+            <figure class="shopping-cart-left">
+                <img src="./assets/icons/icon_shopping_cart_notification.svg" alt="shopping cart icon">
+                
+                <div class="number-of-items">2</div>
+            </figure>
+        </div>
+
+        <div class="right">
+            <ul class="account">
+                <li>
+                    <a href="/">yardsale@gmail.com</a>
+                </li>
+    
+                <li>
+                    <img src="./assets/icons/flechita.svg" alt="Down arrow icon">
+                </li>
+            </ul>
+    
+            <figure class="shopping-cart-right" id="shoppingCart">
+                <img src="./assets/icons/icon_shopping_cart_notification.svg" alt="shopping cart icon">    
+                
+                <div class="number-of-items">2</div>
+            </figure>
+        </div>    
+    </nav>
+
+    <div class="desktop-menu hidden" id="desktopMenu">
+        <ul>
+            <li>
+                <a href="" class="my-order">My orders</a>
+            </li>
+
+            <li>
+                <a href="" class="my-account">My account</a>
+            </li>
+
+            <li>
+                <a href="./login.html" class="sign-out">Sing out</a>
+            </li>
+        </ul>
+    </div>
 </body>
 </html>
