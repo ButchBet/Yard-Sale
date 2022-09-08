@@ -5,6 +5,8 @@
     grid-template-rows: repeat(3, auto);
     padding: 25px 20px 25px 40px;
     box-sizing: border-box;
+    border: 1px solid var(--very-light-pink);
+    border-radius: 6px;
 }
 
 .exit {
