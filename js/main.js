@@ -17,10 +17,8 @@ const products = document.getElementById('products');
 switchMenus.forEach((menu) => {
     menu.addEventListener('click', (e) => {
         e.preventDefault();
-        desktopMenu.classList.toggle('hidden');
-        mobileMenu.classList.toggle('hidden');
-        shoppingCart.classList.add('hidden');
-        productPanel.classList.add('hidden');
+        
+        toggleMenu();
 
         // switchProducts();
     });
@@ -34,10 +32,7 @@ emailMobileMenu.addEventListener('click', (e) => {
 // Script to open and close the shopping cart
 switchShoppingCarts.forEach((switchShoppingCart) => {
     switchShoppingCart.addEventListener('click', (e) => {
-        shoppingCart.classList.toggle('hidden');
-        desktopMenu.classList.add('hidden');
-        mobileMenu.classList.add('hidden');
-        productPanel.classList.add('hidden');
+        toggleShoppingCart();
 
         // switchProducts();
     });
@@ -80,6 +75,20 @@ numberOfItems.forEach((element) => {
 function setNumberOfItems(element) { // Function to set the number of items in the shopping cart icon
     const itemsOfShoppingCart = Array.from(document.getElementsByClassName('item'));
     element.textContent = itemsOfShoppingCart.length.toString();
+}
+
+function toggleMenu() {
+    desktopMenu.classList.toggle('hidden');
+        mobileMenu.classList.toggle('hidden');
+        shoppingCart.classList.add('hidden');
+        productPanel.classList.add('hidden');
+}
+
+function toggleShoppingCart() {
+    shoppingCart.classList.toggle('hidden');
+    desktopMenu.classList.add('hidden');
+    mobileMenu.classList.add('hidden');
+    productPanel.classList.add('hidden');
 }
 
 // function switchProducts() {
