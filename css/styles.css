@@ -156,6 +156,11 @@ nav {
     .desktop-menu {
         display: none;
     }
+
+    .shopping-cart {
+        max-width: 100%;
+        left: 0;
+    }
 }
 
 @media (min-width: 641px) {
@@ -171,9 +176,5 @@ nav {
 
     .shopping-cart .items-total-checkout .items .item {
         gap: 0;
-    }
-
-    .shopping-cart {
-        left: 0;
     }
 }
