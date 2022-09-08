@@ -85,6 +85,10 @@ nav {
     display: none;
 }
 
+.shopping-cart-left {
+    position: relative;
+}
+
 .right {
     gap: 25px;
 }
@@ -108,10 +112,13 @@ nav {
 .number-of-items {
     font-size: 6px;
     border-radius: 100%;
-    right: 24px;
     display: inline;
     position: absolute;
-    top: 12px;
+    padding: 3px 4px;
+    top: 0;
+    right: 0;
+    background: #b6ddbb;
+
 }
 
 .hidden {
