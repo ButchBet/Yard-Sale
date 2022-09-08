@@ -165,7 +165,8 @@ nav {
         display: none;
     }
 
-    .shopping-cart {
+    .shopping-cart,
+    .container {
         max-width: 100%;
         left: 0;
     }
