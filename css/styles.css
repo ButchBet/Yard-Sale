@@ -163,3 +163,17 @@ nav {
         display: none;
     }
 }
+
+@media (max-width: 408px) {
+    .shopping-cart .title-container {
+        display: none;
+    }
+
+    .shopping-cart .items-total-checkout .items .item {
+        gap: 0;
+    }
+
+    .shopping-cart {
+        left: 0;
+    }
+}

@@ -68,6 +68,7 @@
         .shopping-cart .items-total-checkout {
             display: flex;
             flex-flow: column wrap;
+            justify-content: center;
             gap: 80px;
         }
 
@@ -83,6 +84,7 @@
             flex-flow: row wrap;
             justify-content: space-between;
             align-items: center;
+            align-content: center;
             gap: 20px;
         }
 
@@ -164,18 +166,22 @@
             .shopping-cart .title-container {
                 display: none;
             }
+
+            .shopping-cart .items-total-checkout .items .item {
+                gap: 0;
+            }
         }
     </style>
 </head>
 <body>
     <section class="shopping-cart">
-        <div class="title-container">
+        <!-- <div class="title-container">
             <figure>
                 <img src="./assets/icons/flechita.svg" alt="Arrow icon">
             </figure>
 
             <p>Shopping cart</p>
-        </div>
+        </div> -->
 
         <div class="items-total-checkout">
             <div class="items">
