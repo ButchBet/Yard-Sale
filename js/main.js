@@ -8,7 +8,7 @@ const numberOfItems = Array.from(document.getElementsByClassName('numberOfItems'
 
 const emailMobileMenu = document.getElementById('emailMobileMenu');
 
-const openProduct = Array.from(document.getElementsByClassName('product-img')).concat(Array.from(document.getElementsByClassName('product-info')));
+const openProduct = Array.from(document.getElementsByClassName('product-img')).concat(Array.from(document.getElementsByClassName('product-details')));
 const closeProduct = document.getElementById('close');
 const productPanel = document.getElementById('productPanel');
 const products = document.getElementById('products');
@@ -20,7 +20,7 @@ switchMenus.forEach((menu) => {
         
         toggleMenu();
 
-        // switchProducts();
+        switchProducts();
     });
 });
 
@@ -34,7 +34,7 @@ switchShoppingCarts.forEach((switchShoppingCart) => {
     switchShoppingCart.addEventListener('click', (e) => {
         toggleShoppingCart();
 
-        // switchProducts();
+        switchProducts();
     });
 });
 
@@ -46,7 +46,7 @@ openProduct.forEach((product) => {
         desktopMenu.classList.add('hidden');
         mobileMenu.classList.add('hidden');
 
-        // switchProducts()
+        switchProducts();
     });
 });
 
@@ -62,14 +62,13 @@ numberOfItems.forEach((element) => {
 });
 
 // Script to make fixing in the flow of the page
-// window.addEventListener('resize', (e) => {
-//     console.log(e.target.innerWidth );
-//     if(e.target.innerWidth > 640) {
-//         products.classList.remove('hidden');
-//     } else if(e.target.innerWidth < 641 && products.classList.contains('changed')) {
-//         products.classList.add('hidden');
-//     }
-// });
+window.addEventListener('resize', (e) => {
+    if(e.target.innerWidth > 640) {
+        products.classList.remove('hidden');
+    } else if(e.target.innerWidth < 641 && (!desktopMenu.classList.contains('hidden') || !shoppingCart.classList.contains('hidden') || !productPanel.classList.contains('hidden'))) {
+        products.classList.add('hidden');
+    }
+});
 
 // Functions
 function setNumberOfItems(element) { // Function to set the number of items in the shopping cart icon
@@ -79,9 +78,9 @@ function setNumberOfItems(element) { // Function to set the number of items in t
 
 function toggleMenu() {
     desktopMenu.classList.toggle('hidden');
-        mobileMenu.classList.toggle('hidden');
-        shoppingCart.classList.add('hidden');
-        productPanel.classList.add('hidden');
+    mobileMenu.classList.toggle('hidden');
+    shoppingCart.classList.add('hidden');
+    productPanel.classList.add('hidden');
 }
 
 function toggleShoppingCart() {
@@ -91,13 +90,10 @@ function toggleShoppingCart() {
     productPanel.classList.add('hidden');
 }
 
-// function switchProducts() {
-//     if(window.innerWidth < 641) {
-//         if(products.classList.contains('hidden')) {
-//             products.classList.remove('hidden');
-//         } else if(!productPanel.classList.contains('hidden')) {
-//             products.classList.add('hidden');
-//         }
-//         // products.classList.add('changed');
-//     }
-// }
+function switchProducts() {
+    if(window.innerWidth < 641 && (!desktopMenu.classList.contains('hidden') || !shoppingCart.classList.contains('hidden') || !productPanel.classList.contains('hidden'))) {
+        products.classList.add('hidden');
+    } else {
+        products.classList.remove('hidden');
+    }
+}
