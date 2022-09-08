@@ -85,7 +85,8 @@ nav {
     display: none;
 }
 
-.shopping-cart-left {
+.shopping-cart-left,
+.shopping-cart-right {
     position: relative;
 }
 
