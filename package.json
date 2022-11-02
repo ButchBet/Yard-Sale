@@ -1,0 +1,21 @@
+{
+  "name": "yard-sale",
+  "version": "1.0.0",
+  "description": "This is an e-commerce website built to address the challenge of the courses https://platzi.com/cursos/frontend-developer-practico/ and https://platzi.com/cursos/react-practico/ of Platzi.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack serve --confing webpack.config.dev.js",
+    "build": "webpack --confing webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ButchBet/Yard-Sale.git"
+  },
+  "keywords": [],
+  "author": "Butchbet",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ButchBet/Yard-Sale/issues"
+  },
+  "homepage": "https://github.com/ButchBet/Yard-Sale#readme"
+}
