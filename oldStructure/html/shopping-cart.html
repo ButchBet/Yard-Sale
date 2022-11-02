@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    
+    <title>Shopping cart</title>
+
+    <style>
+        :root {
+            --very-light-pink: #C7C7C7;
+            --text-input-field: #F7F7F7;
+            --hospital-green: #ACD9B2;
+            --white: #FFFFFF;
+            --black: #000000;
+            --dark: #232830;
+            --sm: 14px;
+            --md: 16px;
+            --lg: 18px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+        }
+        
+        .shopping-cart {
+            max-width: 408px;
+            display: flex;
+            gap: 20px;
+            flex-flow: column wrap;
+            padding: 17px 15px;
+        }
+
+        .shopping-cart .title-container {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: flex-start;
+            gap: 30px;
+            padding-bottom: 17px;
+        }
+
+        .shopping-cart .title-container figure {
+            cursor: pointer;
+        }
+        
+        .shopping-cart .title-container figure img {
+            width: 14px;
+            transform: rotate(180deg);
+        }
+        
+        .shopping-cart .title-container p {
+            font-size: var(--lg);
+            color: var(--dark);
+            font-weight: bold;
+        }
+
+        .shopping-cart .items-total-checkout {
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            gap: 80px;
+        }
+
+        .shopping-cart .items-total-checkout .items {
+            display: flex;
+            flex-flow: column wrap;
+            gap: 20px;
+        }
+        
+        .shopping-cart .items-total-checkout .items .item{
+            /* background: var(--hospital-green); */
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            align-items: center;
+            align-content: center;
+            gap: 20px;
+        }
+
+        .shopping-cart .items-total-checkout .items .removed {
+            opacity: .5;
+        }
+
+        .shopping-cart .items-total-checkout .items .item .item-image-name,
+        .shopping-cart .items-total-checkout .items .item .cost-close {
+            display: flex;
+            flex-flow: row wrap;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .shopping-cart .items .item .item-image-name figure img {
+            width: 70px;
+            height: 70px;
+            border-radius: 15px;
+            object-fit: cover;
+        }
+
+        .shopping-cart .items .item .item-image-name p {
+            color: var(--very-light-pink);
+        }
+
+        .shopping-cart .items-total-checkout .items .item .cost-close {
+            gap: 20px;
+        }
+
+        .shopping-cart .items-total-checkout .items .item .cost-close .total-cost {
+            font-size: var(--md);
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .shopping-cart .items-total-checkout .items .item .cost-close .close-icon img {
+            cursor: pointer;
+        }
+
+        .shopping-cart .items-total-checkout .total-checkout {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .shopping-cart .items-total-checkout .total-checkout .total-and-cost {
+            padding-left: 15px;
+            padding-right: 15px;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--text-input-field);
+            border-radius: 8px;
+            height: 75px;
+        }
+
+        .shopping-cart .items-total-checkout .total-checkout .total-and-cost p {
+            font-size: var(--md);
+            font-weight: 700;
+        }
+
+        .shopping-cart .items-total-checkout .total-checkout .total-and-cost p:last-child {
+            color: var(--dark);
+        }
+
+        .shopping-cart .items-total-checkout .total-checkout button {
+            border: none;
+            background: var(--hospital-green);
+            font-size: var(--lg);
+            color: var(--white);
+            font-weight: 500;
+            border-radius: 8px;
+            height: 70px;
+        }
+
+        @media (max-width: 408px) {
+            .shopping-cart .title-container {
+                display: none;
+            }
+
+            .shopping-cart .items-total-checkout .items .item {
+                gap: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="shopping-cart">
+        <!-- <div class="title-container">
+            <figure>
+                <img src="./assets/icons/flechita.svg" alt="Arrow icon">
+            </figure>
+
+            <p>Shopping cart</p>
+        </div> -->
+
+        <div class="items-total-checkout">
+            <div class="items">
+                <div class="item">
+                    <div class="item-image-name">
+                        <figure>
+                            <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?cs=srgb&dl=pexels-pixabay-276517.jpg&fm=jpg" alt="Item image">
+                        </figure>
+        
+                        <p>Round shelf</p>
+                    </div>
+        
+                    <div class="cost-close">
+                        <div class="total-cost">
+                            <p>$ 600,00</p>
+                        </div>
+        
+                        <div class="close-icon">
+                            <img src="./assets/icons/icon_close.png" alt="Close icon">
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="item">
+                    <div class="item-image-name">
+                        <figure>
+                            <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?cs=srgb&dl=pexels-pixabay-276517.jpg&fm=jpg" alt="Item image">
+                        </figure>
+        
+                        <p>Round shelf</p>
+                    </div>
+        
+                    <div class="cost-close">
+                        <div class="total-cost">
+                            <p>$ 600,00</p>
+                        </div>
+        
+                        <div class="close-icon">
+                            <img src="./assets/icons/icon_close.png" alt="Close icon">
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="item">
+                    <div class="item-image-name">
+                        <figure>
+                            <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?cs=srgb&dl=pexels-pixabay-276517.jpg&fm=jpg" alt="Item image">
+                        </figure>
+        
+                        <p>Round shelf</p>
+                    </div>
+        
+                    <div class="cost-close">
+                        <div class="total-cost">
+                            <p>$ 600,00</p>
+                        </div>
+        
+                        <div class="close-icon">
+                            <img src="./assets/icons/icon_close.png" alt="Close icon">
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="item">
+                    <div class="item-image-name">
+                        <figure>
+                            <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?cs=srgb&dl=pexels-pixabay-276517.jpg&fm=jpg" alt="Item image">
+                        </figure>
+        
+                        <p>Round shelf</p>
+                    </div>
+        
+                    <div class="cost-close">
+                        <div class="total-cost">
+                            <p>$ 600,00</p>
+                        </div>
+        
+                        <div class="close-icon">
+                            <img src="./assets/icons/icon_close.png" alt="Close icon">
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="item">
+                    <div class="item-image-name">
+                        <figure>
+                            <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?cs=srgb&dl=pexels-pixabay-276517.jpg&fm=jpg" alt="Item image">
+                        </figure>
+        
+                        <p>Round shelf</p>
+                    </div>
+        
+                    <div class="cost-close">
+                        <div class="total-cost">
+                            <p>$ 600,00</p>
+                        </div>
+        
+                        <div class="close-icon">
+                            <img src="./assets/icons/icon_close.png" alt="Close icon">
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="item">
+                    <div class="item-image-name">
+                        <figure>
+                            <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?cs=srgb&dl=pexels-pixabay-276517.jpg&fm=jpg" alt="Item image">
+                        </figure>
+        
+                        <p>Round shelf</p>
+                    </div>
+        
+                    <div class="cost-close">
+                        <div class="total-cost">
+                            <p>$ 600,00</p>
+                        </div>
+        
+                        <div class="close-icon">
+                            <img src="./assets/icons/icon_close.png" alt="Close icon">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="total-checkout">
+                <div class="total-and-cost">
+                    <p>Total</p>
+
+                    <p>$ 560,00</p>
+                </div>
+
+                <button>Checkout</button>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
