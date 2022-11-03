@@ -7,6 +7,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js',
+        // assetModuleFilename: "assets/images/[name].[contenthash].[ext]",
         clean: true,
     },
 
@@ -19,7 +20,7 @@ module.exports = {
 
     },
 
-    mode: 'production',
+    mode: 'development',
 
     module: {
         rules: [
@@ -45,6 +46,11 @@ module.exports = {
                 'css-loader',
                 'sass-loader'
               ]
+            },
+
+            {
+                test: /\.(png|svg|jpg|jpeg|gif)$/,
+                type: "asset/resource"
             }
         ],
     },

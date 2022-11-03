@@ -15,7 +15,9 @@ module.exports = {
         extensions: ['.js', '.jsx'],
         alias: {
             '@components': path.resolve(__dirname, 'src/components'),
-            '@styles': path.resolve(__dirname, 'src/styles')
+            '@styles': path.resolve(__dirname, 'src/styles'),
+            "@images": path.resolve(__dirname, "src/assets/images"),
+            "@containers": path.resolve(__dirname, "src/containers")
         },
 
     },
@@ -46,6 +48,18 @@ module.exports = {
                 'css-loader',
                 'sass-loader'
               ]
+            },
+
+            {
+                test: /\.(png|svg|jp?g|gif)$/i,
+                use: [
+                    {
+                      loader: 'url-loader',
+                      options: {
+                        limit: 10000
+                      }
+                    }
+                ]
             }
         ],
     },
