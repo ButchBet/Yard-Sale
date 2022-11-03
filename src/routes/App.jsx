@@ -34,9 +34,6 @@ const App = () => {
                 </Switch>
             </Layout>
     </BrowserRouter>
-        // <Layout>
-        //     <MyOrders />
-        // </Layout>
     );
 }
 
