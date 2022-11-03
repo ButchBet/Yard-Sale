@@ -9,6 +9,7 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js',
         clean: true,
+        publicPath: "/",
     },
 
     resolve: {
@@ -17,7 +18,9 @@ module.exports = {
             '@components': path.resolve(__dirname, 'src/components'),
             '@styles': path.resolve(__dirname, 'src/styles'),
             "@images": path.resolve(__dirname, "src/assets/images"),
-            "@containers": path.resolve(__dirname, "src/containers")
+            "@containers": path.resolve(__dirname, "src/containers"),
+            "@routes": path.resolve(__dirname, "src/routes"),
+            "@pages": path.resolve(__dirname, "src/pages"),
         },
 
     },
@@ -80,7 +83,7 @@ module.exports = {
             directory: path.join(__dirname, 'dist'),
         },
         compress: true,
-        // historyApiFallback: true,
+        historyApiFallback: true,
         port: 3006,
         open: true,
     } 

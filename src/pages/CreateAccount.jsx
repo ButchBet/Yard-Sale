@@ -6,7 +6,7 @@ const CreateAccount = () => {
     return(
 <div className="login">
   <div className="form-container">
-    <h1 className="title">My account</h1>
+    <h1 className="title">Create account</h1>
     <form action="/" className="form">
       <div>
         <label htmlFor="name" className="label">Name</label>
