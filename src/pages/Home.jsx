@@ -4,6 +4,8 @@ import Items from "@containers/Items";
 import Item from "@components/Item";
 import DesktopMenu from "@components/DesktopMenu";
 import MobileMenu from "@components/MobileMenu";
+import ItemPanel from "@components/ItemPanel";
+import ShoppingCart from "@containers/ShoppingCart";
 
 const Home = () => {
     return(
@@ -38,7 +40,5 @@ const Home = () => {
         </Main>
     )
 }
-{/* <DesktopMenu />
-<MobileMenu />  */}
 
 export default Home;

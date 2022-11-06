@@ -14,14 +14,6 @@ const MyOrder = () => {
                 <Order />
 
                 <OrderItem />
-
-                <OrderItem />
-                
-                <OrderItem />
-                
-                <OrderItem />
-                
-                <OrderItem />
             </div>
         </section>
     )
