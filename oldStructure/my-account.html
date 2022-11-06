@@ -1,3 +1,4 @@
+<<<<<<< HEAD:oldStructure/my-account.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -129,4 +130,139 @@
         </div>
     </div>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="./assets/icons/windowIcon.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <title>My account</title>
+
+    <style>
+        :root {
+            --very-light-pink: #C7C7C7;
+            /* --very-light-pink: #c4c0c0; */
+            --text-input-field: #F7F7F7;
+            --hospital-green: #ACD9B2;
+            --white: #FFFFFF;
+            --black: #000000;
+            --dark: #232830;
+            --sm: 14px;
+            --md: 16px;
+            --lg: 18px;
+        }
+        
+        body {
+            margin: 0;
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        .login {
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            place-items: center;
+        }
+
+        .form-container {
+            display: grid;
+            grid-template-rows: auto 1fr;
+            width: 340px;
+        }
+
+        .title {
+            font-size: var(--lg);
+            margin: 0;
+            margin-bottom: 45px;
+            text-align: start;
+        }
+
+        .form {
+            display: flex;
+            flex-flow: column wrap;
+        }
+
+        .form div {
+            display: flex;
+            flex-flow: column wrap;
+        }
+
+        .label {
+            font-size: var(--sm);
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+
+        .value {
+            color: var(--very-light-pink);
+            font-size: var(--md);
+            margin: 8px 0 32px 0;
+        }
+
+        .secondary-button {
+            background-color: var(--white);
+            border-radius: 8px;
+            border: 1.5px solid var(--hospital-green);
+            color: var(--hospital-green);
+            width: 100%;
+            font-size: var(--md);
+            font-weight: bold;
+            height: 50px;
+            cursor: pointer;
+        }
+
+        .modify-button {
+            margin-top: 14px;
+        }
+
+        @media (max-width: 640px) {
+            .form-container {
+                height: 100%;
+            }
+
+            .title {
+                margin-top: 30px;
+            }
+            
+            .form {
+                height: 100%;
+            }
+
+            .form div {
+                margin-bottom: 230px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login">
+        <div class="form-container">
+            <h1 class="title">My account</h1>
+
+            <form action="./login.html" class="form">
+                <div>
+                    <label for="name" class="label">Name</label>
+                    <p class="value">Yard Sale</p>
+                    
+                    <label for="email" class="label">Email address</label>
+                    <p class="value">yardsale@gmail.com</p>
+                    
+                    <label for="password" class="label">Password</label>
+                    <p class="value">*********</p>
+                </div>
+
+                <input type="submit" value="Edit" class="secondary-button modify-button">
+            </form>
+        </div>
+    </div>
+</body>
+>>>>>>> c0ceea2141ca3762363c72da2e1b3702f95381fc:my-account.html
 </html>
