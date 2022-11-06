@@ -1,29 +1,29 @@
-.login {
+.createAccount {
     width: 100vw;
     height: 100vh;
     display: grid;
     place-items: center;
 }
 
-.form-container {
+.fromContainer{
     display: grid;
-    grid-template-rows: auto 1fr;
+    /* grid-template-rows: auto 1fr; */
     width: 340px;
 }
 
-.title {
+.fromContainer__title {
     font-size: var(--lg);
     margin: 0;
     margin-bottom: 45px;
     text-align: start;
 }
 
-.form {
+.fromCotainer__form {
     display: flex;
     flex-flow: column wrap;
 }
 
-.form div {
+.fromCotainer__form div {
     display: flex;
     flex-flow: column wrap;
 }
@@ -60,20 +60,8 @@
     margin-top: 14px;
 }
 
-@media (max-width: 640px) {
-    .form-container {
-        height: 100%;
-    }
-
-    .title {
-        margin-top: 30px;
-    }
-    
-    .form {
-        height: 100%;
-    }
-
-    .form div {
+@media (max-width: 640px) {    
+    .fromCotainer__form div {
         margin-bottom: 230px;
     }
 }

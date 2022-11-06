@@ -11,7 +11,7 @@
     width: 340px;
 }
 
-.logo {
+.error {
     width: 200px;
     margin-bottom: 48px;
     justify-self: center;
@@ -21,6 +21,7 @@
 
 .text {
     text-align: center;
+    padding: 32px 0px;
 }
 
 

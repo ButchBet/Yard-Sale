@@ -1,0 +1,46 @@
+.items .item {
+    display: flex;
+    flex-flow: row wrap;
+    padding-right: 15px;
+    box-sizing: border-box;
+}
+
+.items .item div {
+    width: 75.71%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-content: center;
+    padding-left: 7px;
+    box-sizing: border-box;
+}
+
+.items .item div p {
+    color: var(--very-light-pink);
+    font-weight: 500;
+    margin: 0;
+}
+
+.items .item div p:nth-child(2) {
+    color: var(--dark);
+    font-weight: bold;
+}
+
+.item img {
+    width: 70px;
+    height: 70px;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+@media (max-width: 350px) {
+    .items .item div {
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .items .item div p:last-child {
+        text-align: center;
+    }
+}
