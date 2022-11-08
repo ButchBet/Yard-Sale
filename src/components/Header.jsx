@@ -6,60 +6,54 @@ import yardSaleLogo from "@images/logos/logo_yard_sale.svg"
 import menuIcon from "@images/icons/icon_menu.svg";
 
 const Header = () => {
+    const [menu, setMenu] = React.useState(false);
+
+    const handleMenuClick = () => {
+        setMenu(!menu);
+    }
+
     return(
-        <nav className="navHeader">
-            <div className="left">
-                <figure className="bar">
-                    <img src={menuIcon} alt="Bar icon" />
-                </figure>
-
-                <figure className="">
-                    <img src={yardSaleLogo} alt="Yard Sale logo" />
-                </figure>
-
-                <ul className="categories">
+        <nav>
+			<img onClick={handleMenuClick} src={menuIcon} alt="menu" className="menu" />
+			<div className="navbar-left">
+				<img src={yardSaleLogo} alt="logo" className="logo" />
+				<ul>
+					<li>
+						<a href="/">All</a>
+					</li>
+					
                     <li>
-                        <a className="selected" href="/">All</a>
-                    </li>
+						<a href="/">Clothes</a>
+					</li>
+					
                     <li>
-                        <a className href="/">Clothes</a>
-                    </li>
+						<a href="/">Electronics</a>
+					</li>
+					
                     <li>
-                        <a className href="/">Electronics</a>
-                    </li>
+						<a href="/">Furnitures</a>
+					</li>
+					
                     <li>
-                        <a className href="/">Furniture</a>
-                    </li>
+						<a href="/">Toys</a>
+					</li>
+					
                     <li>
-                        <a className href="/">Toys</a>
-                    </li>
-                    <li>
-                        <a className href="/">Others</a>
-                    </li>
-                </ul>
-                
-                <figure className="shopping-cart-left">
-                    <img src={shoppingCart} alt="shopping cart icon" />
-                    <div className="number-of-items">2</div>
-                </figure>
-            </div>
-            <div className="right">
-                <ul className="account">
-                    <li>
-                        <a href="/">yardsale@gmail.com</a>
-                    </li>
-                    <li>
-                        <img src={downArrow} alt="Down arrow icon" />
-                    </li>
-                </ul>
-
-                <figure className="shopping-cart-right">
-                    <img src={shoppingCart} alt="shopping cart icon" />    
-                    <div className="number-of-items">2</div>
-                </figure>
-            </div>
-        </nav>
-
+						<a href="/">Others</a>
+					</li>
+				</ul>
+			</div>
+			<div className="navbar-right">
+				<ul>
+					<li className="navbar-email">yardsale@gmail.com</li>
+					
+                    <li className="navbar-shopping-cart">
+						<img src={shoppingCart} alt="shopping cart" />
+						<div>2</div>
+					</li>
+				</ul>
+			</div>
+		</nav>
     )
 }
 
