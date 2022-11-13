@@ -1,4 +1,6 @@
 import React from "react";
+import DesktopMenu from "@components/DesktopMenu";
+import MobileMenu from "@components/MobileMenu";
 import "@styles/header.css";
 import shoppingCart from "@images/icons/icon_shopping_cart_notification.svg";
 import downArrow from "@images//icons/flechita.svg";
@@ -45,7 +47,9 @@ const Header = () => {
 			</div>
 			<div className="navbar-right">
 				<ul>
-					<li className="navbar-email">yardsale@gmail.com</li>
+					<li onClick={handleMenuClick} className="navbar-email">
+                        yardsale@gmail.com
+                    </li>
 					
                     <li className="navbar-shopping-cart">
 						<img src={shoppingCart} alt="shopping cart" />
@@ -53,6 +57,8 @@ const Header = () => {
 					</li>
 				</ul>
 			</div>
+
+            {!menu ? "" : <div className="menuContainer"><DesktopMenu /> <MobileMenu /></div>}
 		</nav>
     )
 }

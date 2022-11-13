@@ -1,12 +1,18 @@
-.desktop-menu {
+.menuContainer {
+    position: absolute;
+    right: 0;
+    top: 61px;
     width: 141px;
+}
+
+.desktop-menu {
     height: auto;
     border: 1px solid var(--very-light-pink);
     border-radius: 6px;
     padding: 25px 20px 0 20px;
     position: absolute;
-    right: 0;
     background: var(--white);
+    width: 100%;
 }
 
 .desktop-menu ul {
@@ -43,4 +49,11 @@
     text-decoration: none;
     margin-bottom: 30px;
     display: inline-block;
+}
+
+
+@media (max-width: 640px) {
+    .desktop-menu {
+        display: none;
+    }
 }

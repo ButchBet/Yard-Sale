@@ -1,12 +1,16 @@
 .menu-mobile {
     width: 100%;
     height: auto;
-    display: grid;
+    display: none;
     grid-template-rows: repeat(3, auto);
     padding: 25px 20px 25px 40px;
     box-sizing: border-box;
     border: 1px solid var(--very-light-pink);
     border-radius: 6px;
+    position: absolute;
+    left: 0;
+    top: 61px;
+    background: white;
 }
 
 .exit {
@@ -70,4 +74,16 @@
     text-decoration: none;
     color: var(--black);
     font-size: var(--md);
+}
+
+@media (max-width: 640px) {
+    .menu-mobile {
+        display: grid;
+    }
+
+    .menuContainer {
+        left: 0;
+        width: 100%;
+        top: 0;
+    }
 }
