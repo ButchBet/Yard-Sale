@@ -8,7 +8,6 @@ const useGetItems = (API) => {
         const response = await axios(API);
 
         setItems(response.data);
-
     }, []);
     
     return items;
