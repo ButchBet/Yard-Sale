@@ -6,13 +6,13 @@ const DesktopMenu = () => {
         <div className="desktop-menu hidden" id="desktopMenu">
             <ul>
                 <li>
-                    <a href="./my-orders.html" className="my-order">My orders</a>
+                    <a href="/my-orders" className="my-order">My orders</a>
                 </li>
                 <li>
-                    <a href="./my-account.html" className="my-account">My account</a>
+                    <a href="/my-account" className="my-account">My account</a>
                 </li>
                 <li>
-                    <a href="./login.html" className="sign-out">Sing out</a>
+                    <a href="/login" className="sign-out">Sing out</a>
                 </li>
             </ul>
         </div>

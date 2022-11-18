@@ -4,6 +4,9 @@ import yardSaleLogo from "@images/logos/logo_yard_sale.svg";
 import emailIcon from "@images/icons/email.svg";
 
 const EmailSent = () => {
+    const handleEmailSent = (e) => {
+        document.location.pathname = '/login';
+    }
     return(
         <div className="login">
             <div className="container">
@@ -16,7 +19,7 @@ const EmailSent = () => {
                     <img src={emailIcon} alt="email icon" className="email-icon" />
                 </div>
                 
-                <button className="primary-button login-button">Login</button>
+                <button className="primary-button login-button" onClick={handleEmailSent}>Login</button>
                 
                 <p className="issue">Didn´t receive the email? <a href="#">Resend</a></p>
             </div>
