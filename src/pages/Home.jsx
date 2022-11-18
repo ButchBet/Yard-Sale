@@ -7,10 +7,12 @@ import MobileMenu from "@components/MobileMenu";
 import ItemPanel from "@components/ItemPanel";
 import useGetItems from "@hooks/useGetItems";
 import ShoppingCart from "@containers/ShoppingCart";
+// import AppContext from "@context/AppContext";
 
 const API = 'https://api.escuelajs.co/api/v1/products';
 
 const Home = () => {
+    // const {useGetItems} = React.useContext(AppContext)
     const items = useGetItems(API);
     return(
         <Main>
@@ -19,7 +21,6 @@ const Home = () => {
                     return <Item key={item.id} item={item} />;
                 })}
             </Items>
-
         </Main>
     )
 }

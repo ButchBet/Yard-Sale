@@ -1,18 +1,34 @@
 import React from "react";
 import DesktopMenu from "@components/DesktopMenu";
 import MobileMenu from "@components/MobileMenu";
+import ShoppingCart from "@containers/ShoppingCart";
+
 import "@styles/header.css";
-import shoppingCart from "@images/icons/icon_shopping_cart_notification.svg";
+
+import shoppingCart from "@images/icons/icon_shopping_cart.svg";
 import downArrow from "@images//icons/flechita.svg";
 import yardSaleLogo from "@images/logos/logo_yard_sale.svg"
 import menuIcon from "@images/icons/icon_menu.svg";
 
+import AppContext from "@context/AppContext";
+
+
 const Header = () => {
+	const {state} = React.useContext(AppContext);
+	
+	const [cart, setCart] = React.useState(false);
+
     const [menu, setMenu] = React.useState(false);
 
     const handleMenuClick = () => {
         setMenu(!menu);
+		setCart(false);
     }
+
+	const handleCartClick = () => {
+		setCart(!cart);
+        setMenu(false);
+	}
 
     return(
         <nav>
@@ -51,14 +67,14 @@ const Header = () => {
                         yardsale@gmail.com
                     </li>
 					
-                    <li className="navbar-shopping-cart">
+                    <li className="navbar-shopping-cart" onClick={handleCartClick}>
 						<img src={shoppingCart} alt="shopping cart" />
-						<div>2</div>
+						{state.cart.length > 0 ? <div>{state.cart.length}</div> : null}
 					</li>
 				</ul>
 			</div>
 
-            {!menu ? "" : <div className="menuContainer"><DesktopMenu /> <MobileMenu /></div>}
+            {menu ? <div className="menuContainer"><DesktopMenu /> <MobileMenu /></div> : cart ? <div clasName="shoppingCartContainer"><ShoppingCart /></div> : "" }
 		</nav>
     )
 }

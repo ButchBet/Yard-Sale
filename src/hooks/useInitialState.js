@@ -1,4 +1,5 @@
 import React from "react";
+import useGetItems from "@hooks/useGetItems";
 
 const initialState = {
     cart: []
@@ -26,7 +27,8 @@ const UseInitialState = () => {
     return {
         state,
         addToCart,
-        deleteFromCart
+        deleteFromCart,
+        useGetItems
     }
 }
 
