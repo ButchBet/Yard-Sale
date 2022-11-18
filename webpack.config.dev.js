@@ -22,6 +22,7 @@ module.exports = {
             "@routes": path.resolve(__dirname, "src/routes"),
             "@pages": path.resolve(__dirname, "src/pages"),
             "@hooks": path.resolve(__dirname, "src/hooks"),
+            "@context": path.resolve(__dirname, "src/context")
         },
 
     },
