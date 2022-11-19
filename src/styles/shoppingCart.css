@@ -1,3 +1,9 @@
+.shoppingCartContainer {
+    position: absolute;
+    right: 0;
+    top: 61px;
+}
+
 .shopping-cart {
     max-width: 408px;
     display: flex;
@@ -9,8 +15,6 @@
     background: var(--white);
     border: 1px solid var(--very-light-pink);
     border-radius: 6px;
-    position: absolute;
-    top: 61px;
 }
 
 .title-container {

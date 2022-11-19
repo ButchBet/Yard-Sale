@@ -16,17 +16,17 @@ import AppContext from "@context/AppContext";
 const Header = () => {
 	const {state} = React.useContext(AppContext);
 	
-	const [cart, setCart] = React.useState(false);
+	const [shopping, setShopping] = React.useState(false);
 
     const [menu, setMenu] = React.useState(false);
 
     const handleMenuClick = () => {
         setMenu(!menu);
-		setCart(false);
+		setShopping(false);
     }
 
 	const handleCartClick = () => {
-		setCart(!cart);
+		setShopping(!shopping);
         setMenu(false);
 	}
 
@@ -74,7 +74,7 @@ const Header = () => {
 				</ul>
 			</div>
 
-            {menu ? <div className="menuContainer"><DesktopMenu /> <MobileMenu /></div> : cart ? <div clasName="shoppingCartContainer"><ShoppingCart /></div> : "" }
+            {menu ? <div className="menuContainer"><DesktopMenu /> <MobileMenu /></div> : shopping ? <div className="shoppingCartContainer"><ShoppingCart /></div> : "" }
 		</nav>
     )
 }

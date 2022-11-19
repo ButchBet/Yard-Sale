@@ -2,7 +2,7 @@ import React from "react";
 import useGetItems from "@hooks/useGetItems";
 
 const initialState = {
-    cart: []
+    cart: [],
 }
 
 const UseInitialState = () => {
@@ -24,11 +24,20 @@ const UseInitialState = () => {
         })
     }
 
+    const finalCost = () => {
+        const inititalValue = 0;
+        
+        const result = state.cart.reduce((accumulator, currentValue) => accumulator + currentValue.price, inititalValue);
+        
+        return result;
+    }
+
     return {
         state,
         addToCart,
         deleteFromCart,
-        useGetItems
+        useGetItems,
+        finalCost
     }
 }
 

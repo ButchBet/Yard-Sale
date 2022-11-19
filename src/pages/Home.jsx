@@ -18,7 +18,7 @@ const Home = () => {
         <Main>
             <Items>
                 {items.map((item) => {
-                    return <Item key={item.id} item={item} />;
+                    return <Item key={`item-card-${item.id}`} item={item} />;
                 })}
             </Items>
         </Main>
