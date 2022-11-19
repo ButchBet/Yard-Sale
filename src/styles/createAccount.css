@@ -9,6 +9,7 @@
     display: grid;
     /* grid-template-rows: auto 1fr; */
     width: 340px;
+    padding: 30px 0;
 }
 
 .fromContainer__title {
@@ -63,5 +64,9 @@
 @media (max-width: 640px) {    
     .fromCotainer__form div {
         margin-bottom: 230px;
+    }
+
+    .fromContainer{
+        padding: 30px 0;
     }
 }
