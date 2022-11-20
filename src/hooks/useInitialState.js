@@ -7,6 +7,9 @@ const initialState = {
 
 const UseInitialState = () => {
     const [state, setState] = React.useState(initialState);
+    const [shopping, setShopping] = React.useState(false);
+    const [menu, setMenu] = React.useState(false);
+    const [itemsPanel, setItemsPanel] = React.useState(true);
 
     const addToCart = (item) => {
         setState({
@@ -37,7 +40,13 @@ const UseInitialState = () => {
         addToCart,
         deleteFromCart,
         useGetItems,
-        finalCost
+        finalCost,
+        shopping, 
+        setShopping,
+        menu,
+        setMenu,
+        itemsPanel,
+        setItemsPanel
     }
 }
 

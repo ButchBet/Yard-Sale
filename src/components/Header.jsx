@@ -1,7 +1,4 @@
 import React from "react";
-import DesktopMenu from "@components/DesktopMenu";
-import MobileMenu from "@components/MobileMenu";
-import ShoppingCart from "@containers/ShoppingCart";
 
 import "@styles/header.css";
 
@@ -14,11 +11,7 @@ import AppContext from "@context/AppContext";
 
 
 const Header = () => {
-	const {state} = React.useContext(AppContext);
-	
-	const [shopping, setShopping] = React.useState(false);
-
-    const [menu, setMenu] = React.useState(false);
+	const {state, shopping, setShopping, menu, setMenu, setItemsPanel} = React.useContext(AppContext);
 
     const handleMenuClick = () => {
         setMenu(!menu);
@@ -29,6 +22,24 @@ const Header = () => {
 		setShopping(!shopping);
         setMenu(false);
 	}
+
+	React.useEffect(() => {
+		const analize = () => {
+            if(menu && screen.availWidth  < 641) {
+                setItemsPanel(false);
+            } else {
+                setItemsPanel(true);
+            }
+        }
+
+		analize(); // Called when the user click in the menu or cart or item
+
+        window.addEventListener('resize', analize); // Just called when the window is resized
+
+        return () => {
+            window.removeEventListener('resize', analize);
+        }
+	})
 
     return(
         <nav>
@@ -73,8 +84,6 @@ const Header = () => {
 					</li>
 				</ul>
 			</div>
-
-            {menu ? <div className="menuContainer"><DesktopMenu /> <MobileMenu /></div> : shopping ? <div className="shoppingCartContainer"><ShoppingCart /></div> : "" }
 		</nav>
     )
 }

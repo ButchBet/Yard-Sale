@@ -11,18 +11,14 @@ const Item = ({item}) => {
 
     const handleCartClickAdd = (addItem) => {
         setCart(!cart);
-        addToCart(addItem);
-
-        console.log(state);
+        addToCart(addItem);        
     }
 
     const handleCartClickDelete = (deletedItem) => {
         setCart(!cart);
         deleteFromCart(deletedItem);
-
-        console.log(state)
     }
-
+    
     return(
         <div className="product-card">
             <img src={item.images[0]} alt={item.title} className="product-img" />
