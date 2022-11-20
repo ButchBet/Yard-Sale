@@ -10,15 +10,29 @@ const ItemPanel = ({item}) => {
             addToCart, 
             deleteFromCart,
             handleCartClickAdd,
-            handleCartClickDelete
+            handleCartClickDelete,
+            setItemPanel,
+            setClickedItem,
+            setShopping,
+            setMenu
         } = React.useContext(AppContext)
 
         const [cart, setCart] = React.useState(false);
         const [added, setAdded] = React.useState('');
 
+        const handleItemClick = () => {
+            setItemPanel(false);
+    
+            setShopping(false);
+            
+            setMenu(false);
+
+            setClickedItem({});
+        }
+
     return(
         <section className="productPanel hidden" id="productPanel">
-            <div className="close" id="close">
+            <div className="close" id="close" onClick={handleItemClick}>
                 <img src={close} alt="Close icon" />
             </div>
 

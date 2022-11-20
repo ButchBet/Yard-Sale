@@ -11,15 +11,29 @@ import AppContext from "@context/AppContext";
 
 
 const Header = () => {
-	const {state, shopping, setShopping, menu, setMenu, setItemsPanel} = React.useContext(AppContext);
+	const {
+			state, 
+			shopping, 
+			setShopping, 
+			menu, 
+			setMenu, 
+			setItemsPanel,
+			setItemPanel
+		} = React.useContext(AppContext);
 
     const handleMenuClick = () => {
         setMenu(!menu);
+
+		setItemPanel(false);
+
 		setShopping(false);
     }
 
 	const handleCartClick = () => {
 		setShopping(!shopping);
+
+		setItemPanel(false);
+
         setMenu(false);
 	}
 
