@@ -1,9 +1,21 @@
 import React from "react";
+import AppContext from "@context/AppContext";
 import "@styles/itemPanel.css";
 import close from "@images/icons/icon_close.png";
-import shopppingCart from "@images/icons/icon_shopping_cart.svg";
+import cartIcon from "@images/icons/bt_add_to_cart.svg";
+import addedCartIcon from "@images/icons/bt_added_to_cart.svg";
 
-const ItemPanel = () => {
+const ItemPanel = ({item}) => {
+    const {
+            addToCart, 
+            deleteFromCart,
+            handleCartClickAdd,
+            handleCartClickDelete
+        } = React.useContext(AppContext)
+
+        const [cart, setCart] = React.useState(false);
+        const [added, setAdded] = React.useState('');
+
     return(
         <section className="productPanel hidden" id="productPanel">
             <div className="close" id="close">
@@ -12,7 +24,7 @@ const ItemPanel = () => {
 
             <div className="product-image">
                 <figure>
-                    <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?cs=srgb&dl=pexels-pixabay-276517.jpg&fm=jpg" alt="product" className="product-img" />
+                    <img src={item.images[0]} alt="product" className="product-img" />
                 </figure>
 
                 <ul className="change-image">
@@ -26,16 +38,33 @@ const ItemPanel = () => {
                 <div className="price-name-description">
 
                     <div className="name-price">
-                        <p className="price">$ 120,00</p>
+                        <p className="price">$ {item.price}</p>
                         
-                        <p className="name">Retro refrigerator</p>
+                        <p className="name">{item.title}</p>
                     </div>
 
-                    <p className="description">With its functional and practical interior, this refrigerator also fulfills a decorative function, adding presonality and a retro-vintage desthtic to your kitchen or workplacee</p>
+                    <p className="description">{item.description}</p>
                 </div>
                 
-                <button>
-                    <img src={shopppingCart} alt="Add to cart icon" />
+                <button className={added} onClick={
+                        !cart 
+                            ? () => {
+                                handleCartClickAdd(item, cart, setCart);
+
+                                setAdded('selected');
+                            } 
+                            : () => {
+                                handleCartClickDelete(item,  cart, setCart);
+
+                                setAdded('');
+                            }
+                        } >
+
+                    <img src={
+                                !cart  
+                                    ? cartIcon 
+                                    : addedCartIcon
+                                } alt="Add to card icon" />
                     <p>Add to cart</p>
                 </button>
             </div>

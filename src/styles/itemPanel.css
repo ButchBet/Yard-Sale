@@ -6,7 +6,7 @@
     gap: 20px;
     position: absolute;
     right: 0;
-    top: 54px;
+    top: 61px;
     background: var(--white);
     padding: 10px 10px 0 10px;
     border: 1px solid var(--very-light-pink);
@@ -115,6 +115,12 @@
     font-weight: 500;
 }
 
-.productPanel .product-information button img {
+/* .productPanel .product-information button img {
     filter: brightness(0) invert(1);
+} */
+
+.selected {
+    border: 1px solid var(--hospital-green) !important;
+    background: var(--white) !important;
+    color: var(--hospital-green) !important;
 }

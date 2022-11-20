@@ -10,6 +10,8 @@ const UseInitialState = () => {
     const [shopping, setShopping] = React.useState(false);
     const [menu, setMenu] = React.useState(false);
     const [itemsPanel, setItemsPanel] = React.useState(true);
+    const [itemPanel, setItemPanel] = React.useState(false);
+    const [clickedItem, setClickedItem] = React.useState({});
 
     const addToCart = (item) => {
         setState({
@@ -35,6 +37,16 @@ const UseInitialState = () => {
         return result;
     }
 
+    const handleCartClickAdd = (addItem, variable, method) => {
+        method(!variable);
+        addToCart(addItem);        
+    }
+
+    const handleCartClickDelete = (deletedItem, variable, method) => {
+        method(!variable);
+        deleteFromCart(deletedItem);
+    }
+
     return {
         state,
         addToCart,
@@ -46,7 +58,13 @@ const UseInitialState = () => {
         menu,
         setMenu,
         itemsPanel,
-        setItemsPanel
+        setItemsPanel,
+        itemPanel,
+        setItemPanel,
+        clickedItem,
+        setClickedItem,
+        handleCartClickAdd,
+        handleCartClickDelete
     }
 }
 

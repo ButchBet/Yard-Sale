@@ -5,33 +5,46 @@ import addedCartIcon from "@images/icons/bt_added_to_cart.svg";
 import AppContext from "@context/AppContext";
 
 const Item = ({item}) => {
-    const {state, addToCart, deleteFromCart} = React.useContext(AppContext);
+    const {
+            state, 
+            addToCart, 
+            deleteFromCart, 
+            setItemPanel, 
+            setClickedItem,
+            handleCartClickAdd,
+            handleCartClickDelete
+        } = React.useContext(AppContext);
 
     const [cart, setCart] = React.useState(false);
 
-    const handleCartClickAdd = (addItem) => {
-        setCart(!cart);
-        addToCart(addItem);        
+    const handleItemClick = (item) => {
+        setItemPanel(true);
+
+        setClickedItem(item);
     }
 
-    const handleCartClickDelete = (deletedItem) => {
-        setCart(!cart);
-        deleteFromCart(deletedItem);
-    }
-    
     return(
         <div className="product-card">
-            <img src={item.images[0]} alt={item.title} className="product-img" />
+            <img src={item.images[0]} alt={item.title} className="product-img" onClick={() => handleItemClick(item)} />
                         
             <div className="product-info">
-                <div className="product-details">
+                <div className="product-details" onClick={() => handleItemClick(item)}>
                     <p>$ {item.price}</p>
                     <p>{item.title}</p>
                 </div>
                 
                 <div className="product-icon">
-                    <figure onClick={!cart ? () => handleCartClickAdd(item) : () => handleCartClickDelete(item)}>
-                        <img src={!cart ? cartIcon : addedCartIcon} alt="Add to card icon" />
+                    <figure onClick={
+                        !cart 
+                            ? () => handleCartClickAdd(item, cart, setCart) 
+                            : () => handleCartClickDelete(item,  cart, setCart)
+                        } >
+
+                        <img src={
+                                !cart  
+                                    ? cartIcon 
+                                    : addedCartIcon
+                                } alt="Add to card icon" />
                     </figure>
                 </div>
             </div>
