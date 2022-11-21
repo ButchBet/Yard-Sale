@@ -1,5 +1,6 @@
 const path = require('path');
 const htmlWebpackPlugin = require('html-webpack-plugin');
+const miniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
     entry: './src/index.js',
@@ -7,15 +8,21 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js',
-        // assetModuleFilename: "assets/images/[name].[contenthash].[ext]",
         clean: true,
+        publicPath: "/",
     },
 
     resolve: {
         extensions: ['.js', '.jsx'],
         alias: {
             '@components': path.resolve(__dirname, 'src/components'),
-            '@styles': path.resolve(__dirname, 'src/styles')
+            '@styles': path.resolve(__dirname, 'src/styles'),
+            "@images": path.resolve(__dirname, "src/assets/images"),
+            "@containers": path.resolve(__dirname, "src/containers"),
+            "@routes": path.resolve(__dirname, "src/routes"),
+            "@pages": path.resolve(__dirname, "src/pages"),
+            "@hooks": path.resolve(__dirname, "src/hooks"),
+            "@context": path.resolve(__dirname, "src/context")
         },
 
     },
@@ -49,8 +56,15 @@ module.exports = {
             },
 
             {
-                test: /\.(png|svg|jpg|jpeg|gif)$/,
-                type: "asset/resource"
+                test: /\.(png|svg|jp?g|gif)$/i,
+                use: [
+                    {
+                      loader: 'url-loader',
+                      options: {
+                        limit: 10000
+                      }
+                    }
+                ]
             }
         ],
     },
@@ -59,6 +73,10 @@ module.exports = {
         new htmlWebpackPlugin({
             template: './public/index.html',
             filename: './index.html',
-        })
-    ]
+        }),
+
+        new miniCssExtractPlugin({
+          filename: '[name].css',
+        }),
+    ],
 }
