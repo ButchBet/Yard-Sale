@@ -1,4 +1,5 @@
 import React from "react";
+import Header from "@components/Header";
 import "@styles/myAccount.css";
 
 const MyAccount = () => {
@@ -30,22 +31,26 @@ const MyAccount = () => {
         setValidation(!validation);
     }
     return(
-        <div className="login">
-            <div className="form-container">
-                <h1 className="title">My account</h1>
-                
-                <form action="./login" className="form" ref={form}>
-                    <div>
-                        <label htmlFor="name" className="label">Name</label>
-                        <p className="value" name="name" ref={name}>Yard Sale</p>
-                        <label htmlFor="email" className="label">Email address</label>
-                        <p className="value" name="email" ref={email}>yardsale@gmail.com</p>
-                        <label htmlFor="password" className="label">Password</label>
-                        <p className="value" name="password" ref={password}>*********</p>
-                    </div>
+        <div>
+            <Header />
+
+            <div className="login">
+                <div className="form-container">
+                    <h1 className="title">My account</h1>
                     
-                    <input type="submit" value="Edit" className="secondary-button modify-button" onClick={handleMyAccount} />
-                </form>
+                    <form action="./login" className="form" ref={form}>
+                        <div>
+                            <label htmlFor="name" className="label">Name</label>
+                            <p className="value" name="name" ref={name}>Yard Sale</p>
+                            <label htmlFor="email" className="label">Email address</label>
+                            <p className="value" name="email" ref={email}>yardsale@gmail.com</p>
+                            <label htmlFor="password" className="label">Password</label>
+                            <p className="value" name="password" ref={password}>*********</p>
+                        </div>
+                        
+                        <input type="submit" value="Edit" className="secondary-button modify-button" onClick={handleMyAccount} />
+                    </form>
+                </div>
             </div>
         </div>
     )

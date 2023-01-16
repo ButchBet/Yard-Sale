@@ -1,5 +1,6 @@
 import React from "react";
 import Order from "@components/Order";
+import Header from "@components/Header";
 import OrderItem from "@components/OrderItem";
 import "@styles/myOrder.css";
 
@@ -15,17 +16,21 @@ const MyOrder = () => {
     }
 
     return(
-        <section className="orders">
-            <div className="title-container">
-                <p className="title">My order</p>
-            </div>
-        
-            <div className="items">
-                <Order />
+        <div>
+            <Header />
 
-                <OrderItem item={item} type="false" />
-            </div>
-        </section>
+            <section className="orders">
+                <div className="title-container">
+                    <p className="title">My order</p>
+                </div>
+            
+                <div className="items">
+                    <Order />
+
+                    <OrderItem item={item} type="false" />
+                </div>
+            </section>
+        </div>
     )
 }
 

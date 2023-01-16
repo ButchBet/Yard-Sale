@@ -1,27 +1,32 @@
 import React from "react";
+import Header from "@components/Header";
 import Order from "@components/Order";
 import "@styles/myOrders.css";
 
 const MyOrders = () => {
     return(
-        <section className="order">
-            <div className="title-container">
-                <p className="title">My orders</p>
-            </div>
+        <div>
+            <Header />
 
-            <div className="items">
-            <Order /> 
+            <section className="order">
+                <div className="title-container">
+                    <p className="title">My orders</p>
+                </div>
 
-            <Order />    
-            
-            <Order />    
-            
-            <Order />    
-            
-            <Order />    
-            
-            </div>
-        </section>
+                <div className="items">
+                <Order /> 
+
+                <Order />    
+                
+                <Order />    
+                
+                <Order />    
+                
+                <Order />    
+                
+                </div>
+            </section>
+        </div>
 
     )
 }
