@@ -4,9 +4,9 @@ import "@styles/desktopMenu.css";
 const DesktopMenu = () => {
     return(
         <div className="desktop-menu hidden" id="desktopMenu">
+            <a href="my-orders" className="my-order">My orders</a>
             <ul>
                 <li>
-                    <a href="my-orders" className="my-order">My orders</a>
                 </li>
                 <li>
                     <a href="my-account" className="my-account">My account</a>
