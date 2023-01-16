@@ -2,7 +2,7 @@
   "name": "yard-sale",
   "version": "1.0.0",
   "description": "This is an e-commerce website built to address the challenge of the courses https://platzi.com/cursos/frontend-developer-practico/ and https://platzi.com/cursos/react-practico/ of Platzi.",
-  "main": "src/index.js",
+  "main": "index.js",
   "scripts": {
     "dev": "webpack serve --config webpack.config.dev.js",
     "build": "webpack --config webpack.config.js"
