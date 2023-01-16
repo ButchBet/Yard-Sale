@@ -2,11 +2,15 @@ import React from "react";
 
 import "@styles/header.css";
 
+
 import shoppingCart from "@images/icons/icon_shopping_cart.svg";
 import downArrow from "@images//icons/flechita.svg";
 import yardSaleLogo from "@images/logos/logo_yard_sale.svg"
 import menuIcon from "@images/icons/icon_menu.svg";
 
+import DesktopMenu from "@components/DesktopMenu";
+import MobileMenu from "@components/MobileMenu";
+import ShoppingCart from "@containers/ShoppingCart";
 import AppContext from "@context/AppContext";
 
 
@@ -98,6 +102,14 @@ const Header = () => {
 					</li>
 				</ul>
 			</div>
+
+			{
+				menu 
+					? <div className="menuContainer"><DesktopMenu /> <MobileMenu /></div> 
+					: shopping 
+					? <div className="shoppingCartContainer"><ShoppingCart /></div> 
+					: null 
+			}
 		</nav>
     )
 }
