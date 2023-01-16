@@ -1,10 +1,9 @@
 .order {
     width: 100vw;
-    height: 100vh;
     display: grid;
     justify-content: center;
-    align-content: center;
     gap: 60px;
+    padding: 20px 0;
 }
 
 .title-container {
