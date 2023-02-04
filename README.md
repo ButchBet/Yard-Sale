@@ -13,7 +13,7 @@ This is a solution to the [one of the projects in the JavaScript school](https:/
 
 ### Links
 - Solution URL: [GitHub](https://github.com/ButchBet/Yard-Sale)
-- Live Site URL: [Yard Sale](https://butchbet.github.io/Yard-Sale)
+- Live Site URL: [Yard Sale](https://yardsalebutchbet.vercel.app/)
 
 ### Built with
 - Semantic HTML5 markup
