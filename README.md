@@ -1,27 +1,24 @@
-# Platzi - Yard Sale
+# Yard Sale
 
 ## Table of contents
 
-- [Overview](#overview)
-  - [Links](#links)
+- [Links](#links)
 - [Built with](#built-with)
 - [Author](#author)
 
-## Overview
-This is a solution to the [one of the projects in the JavaScript school](https://platzi.com/escuela-javascript/).
-
-
-### Links
+## Links
 - Solution URL: [GitHub](https://github.com/ButchBet/Yard-Sale)
 - Live Site URL: [Yard Sale](https://yardsalebutchbet.vercel.app/)
 
-### Built with
+## Built with
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
 - Grid
 - Mobile-first workflow
 - JS vanilla
+- React.js
+- Webpack
 
 ## Author
 - Website - [Butchbet](none)
